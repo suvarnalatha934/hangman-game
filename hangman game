@@ -1,0 +1,31 @@
+import random
+# from collections import counter
+
+someWords = '''apple banana mango strawberry orange grape pineapple lemon coconut watermelon cherry papaya berry peach'''
+someWords = someWords. split(" ")
+
+word = random.choice(someWords)
+chance = len(word) + 2
+guess = " "
+guesses = " "
+print('Guess the word! HINT: word is name of a fruit')
+
+for i in word:
+    print("_", end= "")
+print()
+while chance != 0:
+    chance -= 1
+    guess = str(input("\n" + "guess a word : "))
+    guesses += guess
+    for char in guesses:
+        if char in guesses:
+            aa = char
+        else:
+            aa = ""
+        print(aa, end=" ")
+
+        if guesses == word:
+            print("you won")
+
+
+
